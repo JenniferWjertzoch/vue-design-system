@@ -1,52 +1,61 @@
-import MyButton from './Button.vue';
+import VButton from '../components/Button.vue';
 
-// More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: MyButton,
+  title: 'Design System/Button',
+  component: VButton,
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    label: { control: 'text' },
+    disabled: { control: 'boolean' },
     onClick: {},
-    size: {
+    variant: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      options: ['primary', 'secondary', 'terciary', 'ghost', 'link'],
     },
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
-  components: { MyButton },
+  components: { VButton },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<my-button v-bind="args" />',
+  template: '<v-button v-bind="args" />',
 });
 
+/** Primary Variant */
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-  primary: true,
+  variant: 'primary',
   label: 'Button',
 };
 
+/** Secondary Variant */
 export const Secondary = Template.bind({});
 Secondary.args = {
+  variant: 'secondary',
   label: 'Button',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
+/** Terciary Variant */
+export const Terciary = Template.bind({});
+Terciary.args = {
+  variant: 'terciary',
   label: 'Button',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
+/** Ghost Variant */
+export const Ghost = Template.bind({});
+Ghost.args = {
+  variant: 'ghost',
   label: 'Button',
+};
+
+/** Link Variant */
+export const Link = Template.bind({});
+Link.args = {
+  variant: 'link',
+  label: 'Simple Link',
 };

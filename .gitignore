@@ -27,7 +27,7 @@ coverage
 *.sln
 *.sw?
 # .storybook
-# .vscode
+.vscode
 # public
 # .eslintrc.cjs
 # .npmrc

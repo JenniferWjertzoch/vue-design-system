@@ -36,3 +36,5 @@ coverage
 # package-lock.json
 # postcss.config.js
 # vite.config.js
+
+.env

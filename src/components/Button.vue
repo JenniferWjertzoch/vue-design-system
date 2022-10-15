@@ -2,7 +2,6 @@ import VIcon from '../components/Icon.vue';
 
 <template>
   <button type="button" :class="classes" :disabled="disabled" @click="onClick">
-    <v-icon :type="circleCheck" />
     {{ label }}
   </button>
 </template>
